@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="intro_control_width">420dp</dimen>
+
+  <dimen name="bar_height">48dp</dimen>
+
+  <dimen name="bar_text_padding">16dp</dimen>
+  <dimen name="bar_switch_padding">8dp</dimen>
+
+  <dimen name="row_text_padding">16dp</dimen>
+  <dimen name="row_checkbox_padding">8dp</dimen>
+</resources>

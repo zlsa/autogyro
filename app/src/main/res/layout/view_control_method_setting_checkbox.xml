@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="?android:attr/selectableItemBackground"
+
+    android:id="@+id/row"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bar_height"
+
+    android:clickable="true"
+
+    android:orientation="horizontal"
+
+    android:theme="@style/IntroTheme.Light"
+    >
+
+  <TextView
+      android:id="@+id/name"
+
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="match_parent"
+
+      android:gravity="start|center"
+
+      android:layout_marginStart="@dimen/row_text_padding"
+      />
+
+  <CheckBox
+      android:id="@+id/checkbox"
+
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/bar_height"
+      android:layout_marginEnd="@dimen/row_checkbox_padding"
+      />
+
+</LinearLayout>

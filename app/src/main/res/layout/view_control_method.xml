@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/control_method_card"
+
+    android:background="@drawable/card_light"
+
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+
+    android:elevation="2dp"
+
+    android:orientation="vertical"
+
+    app:layout_parallaxFactor="0.4"
+
+    android:theme="@style/IntroTheme.Light"
+    >
+
+  <Switch
+      android:id="@+id/toggle_switch"
+
+      android:layout_height="@dimen/bar_height"
+      android:layout_width="match_parent"
+      android:gravity="start|center"
+
+      android:paddingStart="@dimen/bar_text_padding"
+      android:paddingEnd="@dimen/bar_switch_padding"
+
+      android:fontFamily="sans-serif-medium"
+      />
+
+  <LinearLayout
+      android:id="@+id/card_settings"
+
+      android:background="@drawable/card_intro_settings"
+
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+
+      android:orientation="vertical"
+      >
+
+
+  </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:id="@+id/control_methods"
+    >
+
+  <agency.tango.materialintroscreen.parallax.ParallaxLinearLayout
+      android:background="@android:color/transparent"
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:layout_marginTop="16dp"
+
+      android:paddingBottom="164dp"
+
+      android:clipToPadding="false"
+      android:fitsSystemWindows="false"
+
+      android:paddingTop="64dp"
+
+      android:orientation="vertical"
+
+      android:theme="@style/IntroTheme.Light"
+
+      android:id="@+id/control_methods_list"
+      >
+
+    <TextView
+        android:id="@+id/txt_title_slide"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+
+        android:gravity="center"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+
+        android:layout_marginBottom="@dimen/bar_height"
+
+        android:text="@string/intro_slide_control_title"
+
+        android:textColor="#ffffff"
+
+        app:layout_parallaxFactor="0.6"
+        />
+
+  </agency.tango.materialintroscreen.parallax.ParallaxLinearLayout>
+</ScrollView>

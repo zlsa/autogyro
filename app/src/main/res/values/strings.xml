@@ -1,0 +1,52 @@
+<resources>
+  <string name="app_name">Autogyro</string>
+
+  <string name="label_intro">Autogyro</string>
+
+  <string name="intro_slide_permission_grant">Grant permission</string>
+
+  <!-- Intro welcome slide -->
+
+  <string name="intro_slide_welcome_title">Welcome to Autogyro!</string>
+  <string name="intro_slide_welcome_description">Manually adjust your device\u2019s orientation, no gyroscope needed. To start setting up Autogyro, press the arrow or swipe left.</string>
+  <string name="intro_slide_welcome_description_m">Manually adjust your device\u2019s orientation, no gyroscope needed. Before you can use Autogyro, you\u2019ll need to grant it a few permissions.</string>
+
+  <!-- Intro overlay permission slide -->
+
+  <string name="intro_slide_overlay_permission_return_message">Tap \u2018back\u2019 to finish setting up Autogyro.</string>
+  <string name="intro_slide_overlay_permission_not_granted">Autogyro needs the overlay permission before continuing.</string>
+
+  <string name="intro_slide_overlay_permission_title">Allow overlay access</string>
+  <string name="intro_slide_overlay_permission_description">Autogyro locks your device\u2019s orientation using a view that\u2019s always on top, no matter what app you\u2019re using. To do this, Autogyro needs to be able to draw on top of other apps.</string>
+
+  <!-- Intro settings permission slide -->
+
+  <string name="intro_slide_settings_permission_return_message">Tap \u2018back\u2019 to finish setting up Autogyro.</string>
+  <string name="intro_slide_settings_permission_not_granted">Autogyro needs the settings permission before continuing.</string>
+
+  <string name="intro_slide_settings_permission_title">Allow settings access</string>
+  <string name="intro_slide_settings_permission_description">To lock your device\u2019s orientation, Autogyro needs to disable the system-wide auto-rotate setting.</string>
+
+  <!-- Intro control slide -->
+
+  <string name="intro_slide_control_title">Controlling Autogyro</string>
+  <string name="intro_slide_control_description">Select which control methods you\u2019d like to use.</string>
+  <string name="intro_slide_control_at_least_one_method">There needs to be at least one control method</string>
+
+  <!-- Intro ready slide -->
+
+  <string name="intro_slide_ready_title">You\u2019re ready to go!</string>
+  <string name="intro_slide_ready_description">Thank you for using Autogyro.</string>
+
+  <!-- Control method notification -->
+
+  <string name="control_method_notification_use">Notification</string>
+
+  <string name="control_method_notification_show_left">Show rotate left button</string>
+  <string name="control_method_notification_show_right">Show rotate right button</string>
+  <string name="control_method_notification_show_flip">Show flip button</string>
+
+  <string name="control_method_use_quick_settings">Quick Settings tile</string>
+  <string name="control_method_use_gestures">Gestures</string>
+
+</resources>
