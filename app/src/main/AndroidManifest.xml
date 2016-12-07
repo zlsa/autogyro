@@ -12,18 +12,33 @@
       android:theme="@style/AppTheme">
 
     <activity
-        android:name=".IntroActivity"
-        android:label="@string/label_intro"
-        android:theme="@style/IntroTheme"
-        android:launchMode="singleTask"
-        >
-
-      <!-- Portrait lock is temporary, waiting on material-intro-screen 0.0.5 -->
+      android:name=".LaunchActivity"
+      android:label="@string/app_name"
+      android:theme="@style/LaunchTheme"
+      android:launchMode="singleTask"
+      >
 
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
+
+    </activity>
+
+    <activity
+      android:name=".MainActivity"
+      android:label="@string/app_name"
+      android:launchMode="singleTask"
+      >
+
+    </activity>
+
+    <activity
+      android:name=".IntroActivity"
+      android:label="@string/label_intro"
+      android:theme="@style/IntroTheme"
+      android:launchMode="singleTask"
+      >
 
     </activity>
 

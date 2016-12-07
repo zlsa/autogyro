@@ -38,9 +38,13 @@
   <string name="intro_slide_ready_title">You\u2019re ready to go!</string>
   <string name="intro_slide_ready_description">Thank you for using Autogyro.</string>
 
+  <string name="autogyro_use">Enable Autogyro</string>
+
   <!-- Control method notification -->
 
-  <string name="control_method_notification_use">Notification</string>
+  <string name="control_method_notification">Notification</string>
+
+  <string name="control_method_notification_use">Enable notification</string>
 
   <string name="control_method_notification_show_left">Show rotate left button</string>
   <string name="control_method_notification_show_right">Show rotate right button</string>

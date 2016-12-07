@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <bool name="autogyro_use">true</bool>
+
+  <bool name="control_method_notification_use">true</bool>
+  <bool name="control_method_notification_show_left">true</bool>
+  <bool name="control_method_notification_show_right">true</bool>
+  <bool name="control_method_notification_show_flip">false</bool>
+</resources>

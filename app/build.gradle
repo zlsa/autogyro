@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.zlsadesign.autogyro"
         minSdkVersion 21
@@ -26,10 +26,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-    compile 'agency.tango.android:material-intro-screen:0.0.4'
+    compile 'agency.tango.android:material-intro-screen:0.0.5'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.4'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.iamhabib:easy-preference:1.0.1'
+    compile 'com.takisoft.fix:preference-v7:25.0.1.0'
 }

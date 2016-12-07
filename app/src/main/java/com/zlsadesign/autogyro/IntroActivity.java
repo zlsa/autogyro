@@ -21,16 +21,22 @@ public class IntroActivity extends MaterialIntroActivity {
 
     this.pm = new PermissionManager(this);
 
+    // Add the welcome slide.
     this.addWelcomeSlide();
 
+    // If we're on Marshmallow or above, we need to specifically request the permissions.
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
       this.addRequestOverlayPermissionSlide();
       this.addRequestSettingsPermissionSlide();
     }
 
-    this.addControlMethodSlide();
+    // The control method slide will be enabled when I manage to get state changes working properly.
+    //this.addControlMethodSlide();
+
+    // Add the last slide.
     this.addReadySlide();
 
+    enableLastSlideAlphaExitTransition(true);
   }
 
   private void addRequestOverlayPermissionSlide() {
@@ -62,10 +68,10 @@ public class IntroActivity extends MaterialIntroActivity {
   }
 
   private void addControlMethodSlide() {
-
     addSlide(new IntroControlSlide());
   }
 
+  // "Welcome to Autogyro!"
   private void addWelcomeSlide() {
 
     int desc = R.string.intro_slide_welcome_description;
@@ -75,14 +81,15 @@ public class IntroActivity extends MaterialIntroActivity {
     }
 
     addSlide(new IntroGenericSlideBuilder(this)
-            .backgroundColor(R.color.material_light_green_500)
-            .buttonsColor(R.color.material_light_green_700)
-            .image(R.mipmap.image_intro_ready)
-            .title(R.string.intro_slide_welcome_title)
-            .description(desc)
-            .build());
+        .backgroundColor(R.color.material_light_green_500)
+        .buttonsColor(R.color.material_light_green_700)
+        .image(R.mipmap.image_intro_ready)
+        .title(R.string.intro_slide_welcome_title)
+        .description(desc)
+        .build());
   }
 
+  // This is the last slide shown.
   private void addReadySlide() {
 
     addSlide(new IntroGenericSlideBuilder(this)
