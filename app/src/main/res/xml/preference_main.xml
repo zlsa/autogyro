@@ -2,9 +2,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
   <SwitchPreference
-    android:key="show_notification"
+    android:key="enabled"
     android:title="@string/autogyro_use"
-    android:defaultValue="@bool/autogyro_use"
+    android:defaultValue="true"
     />
 
   <PreferenceCategory

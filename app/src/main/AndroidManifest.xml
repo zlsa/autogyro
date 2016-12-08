@@ -31,6 +31,10 @@
       android:launchMode="singleTask"
       >
 
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+      </intent-filter>
+
     </activity>
 
     <activity
@@ -41,6 +45,49 @@
       >
 
     </activity>
+
+    <service android:name=".AutogyroService"/>
+
+    <service
+      android:name=".TileLeftService"
+      android:icon="@drawable/ic_tile_left"
+      android:label="@string/label_tile_left"
+      android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+      >
+
+      <intent-filter>
+        <action
+          android:name="android.service.quicksettings.action.QS_TILE"/>
+      </intent-filter>
+
+    </service>
+
+    <service
+      android:name=".TileRightService"
+      android:icon="@drawable/ic_tile_right"
+      android:label="@string/label_tile_right"
+      android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+      >
+
+      <intent-filter>
+        <action
+          android:name="android.service.quicksettings.action.QS_TILE"/>
+      </intent-filter>
+
+    </service>
+
+    <service
+      android:name=".TileFlipService"
+      android:icon="@drawable/ic_tile_flip"
+      android:label="@string/label_tile_flip"
+      android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+      >
+
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE"/>
+      </intent-filter>
+
+    </service>
 
   </application>
 

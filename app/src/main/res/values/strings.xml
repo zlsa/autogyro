@@ -53,4 +53,11 @@
   <string name="control_method_use_quick_settings">Quick Settings tile</string>
   <string name="control_method_use_gestures">Gestures</string>
 
+  <!-- Quick settings tiles -->
+
+  <string name="label_tile_left">Rotate Left</string>
+  <string name="label_tile_right">Rotate Right</string>
+  <string name="label_tile_flip">Flip</string>
+
+
 </resources>

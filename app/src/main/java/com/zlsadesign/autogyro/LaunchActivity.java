@@ -15,8 +15,11 @@ public class LaunchActivity extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Intent intent = new Intent(this, MainActivity.class);
-    startActivity(intent);
+    startActivity(new Intent(this, MainActivity.class));
+
+    startService(new Intent(this, AutogyroService.class));
+
+    finish();
   }
 
 }
