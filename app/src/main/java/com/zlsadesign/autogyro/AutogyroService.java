@@ -1,8 +1,12 @@
 package com.zlsadesign.autogyro;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
@@ -23,14 +27,22 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class AutogyroService extends Service {
 
+  static int NOTIFICATION_ID = 2948;
+
   static int ROTATION_PORTRAIT = 0;
   static int ROTATION_LANDSCAPE = 1;
   static int ROTATION_PORTRAIT_INVERT = 2;
   static int ROTATION_LANDSCAPE_INVERT = 3;
 
+  static String ACTION_ROTATE_LEFT = "rotate_left";
+  static String ACTION_ROTATE_RIGHT = "rotate_right";
+  static String ACTION_FLIP = "flip";
+
   private View overlay;
   private WindowManager.LayoutParams params;
   private WindowManager wm;
+
+  private AutogyroNotification notification;
 
   private boolean running = false;
 
@@ -39,6 +51,8 @@ public class AutogyroService extends Service {
 
   private int rotation = ROTATION_PORTRAIT;
 
+  private BroadcastReceiver receiver;
+
   @Override
   public void onCreate() {
     EventBus.getDefault().register(this);
@@ -46,6 +60,7 @@ public class AutogyroService extends Service {
     if(getPrefs().getBoolean("enabled", false)) {
       start();
     }
+
   }
 
   public int onStartCommand(Intent intent, int flags, int startId) {
@@ -66,16 +81,21 @@ public class AutogyroService extends Service {
   }
 
   protected void start() {
-    if(overlay == null)
-      createOverlay();
-
     if(running) return;
 
     running = true;
 
+    if(overlay == null)
+      createOverlay();
+    if(notification == null)
+      createNotification();
+
     saveSettings();
     addOverlay();
 
+    addNotification();
+
+    restoreRotation();
     setRotation();
   }
 
@@ -86,6 +106,9 @@ public class AutogyroService extends Service {
 
     restoreSettings();
     removeOverlay();
+    removeNotification();
+
+    destroyNotification();
   }
 
   protected void toggle(boolean enabled) {
@@ -141,6 +164,18 @@ public class AutogyroService extends Service {
     return PreferenceManager.getDefaultSharedPreferences(this);
   }
 
+  private void restoreRotation() {
+    this.rotation = getPrefs().getInt("rotation", ROTATION_PORTRAIT);
+  }
+
+  private void saveRotation() {
+    SharedPreferences.Editor editor = getPrefs().edit();
+    editor.putInt("rotation", this.rotation);
+    editor.apply();
+  }
+
+  // Overlay management.
+
   protected void createOverlay() {
     LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -168,8 +203,46 @@ public class AutogyroService extends Service {
   }
 
   protected void removeOverlay() {
-    if(overlay != null)
+    if(overlay != null) {
       wm.removeView(overlay);
+      overlay = null;
+    }
+  }
+
+  protected void createNotification() {
+    notification = new AutogyroNotification(this);
+
+    IntentFilter filter = new IntentFilter();
+    filter.addAction(ACTION_ROTATE_LEFT);
+    filter.addAction(ACTION_ROTATE_RIGHT);
+    filter.addAction(ACTION_FLIP);
+
+    receiver = new BroadcastReceiver() {
+      @Override
+      public void onReceive(Context context, Intent intent) {
+        if(intent.getAction().equals(ACTION_ROTATE_LEFT)) {
+          offsetRotation(-1);
+        } else if(intent.getAction().equals(ACTION_ROTATE_RIGHT)) {
+          offsetRotation(1);
+        } else if(intent.getAction().equals(ACTION_FLIP)) {
+          offsetRotation(2);
+        }
+      }
+    };
+
+    registerReceiver(receiver, filter);
+  }
+
+  protected void addNotification() {
+    notification.show();
+  }
+
+  protected void removeNotification() {
+    notification.hide();
+  }
+
+  protected void destroyNotification() {
+    notification.destroy();
   }
 
   protected void setRotation(int new_rotation) {
@@ -210,6 +283,7 @@ public class AutogyroService extends Service {
       Log.d("saveSettings", "USER_ROTATION not found");
     }
 
+    saveRotation();
   }
 
   protected void offsetRotation(int offset) {

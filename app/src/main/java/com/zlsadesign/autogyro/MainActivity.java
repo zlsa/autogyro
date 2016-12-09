@@ -2,11 +2,12 @@ package com.zlsadesign.autogyro;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toolbar;
 
-import com.iamhabib.easy_preference.EasyPreference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,7 +15,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends Activity {
 
   protected PermissionManager pm;
-  protected EasyPreference.Builder prefs;
 
   @BindView(R.id.toolbar) Toolbar toolbar;
 
@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
     setActionBar(toolbar);
 
     this.pm = new PermissionManager(this);
-    this.prefs = EasyPreference.with(this);
 
     // If we don't have permissions, OR if we've never used the intro screen; show the intro screen
 
@@ -41,12 +40,18 @@ public class MainActivity extends Activity {
     setUsedIntroScreen();
   }
 
+  private SharedPreferences getPrefs() {
+    return PreferenceManager.getDefaultSharedPreferences(this);
+  }
+
   private boolean usedIntroScreen() {
-    return prefs.getBoolean("usedIntroScreen", false);
+    return getPrefs().getBoolean("usedIntroScreen", false);
   }
 
   private void setUsedIntroScreen() {
-    prefs.addBoolean("usedIntroScreen", true).save();
+    SharedPreferences.Editor editor = getPrefs().edit();
+    editor.putBoolean("usedIntroScreen", true);
+    editor.apply();
   }
 
 }

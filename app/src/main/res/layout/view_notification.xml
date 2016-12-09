@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Button
+    android:id="@+id/rotate_left"
+
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true"
+
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/notification_height"
+
+    android:paddingStart="@dimen/notification_padding_horizontal"
+    android:paddingEnd="@dimen/notification_padding_horizontal"
+
+    android:gravity="center"
+
+    android:theme="@android:style/Widget.Material.Button"
+    style="?android:attr/borderlessButtonStyle"
+
+    android:drawableStart="@drawable/ic_rotate_left"
+    android:drawableTint="@color/light_text_secondary"
+    android:text="@string/label_notification_left"
+    />
+
+  <Button
+    android:id="@+id/rotate_right"
+
+    android:layout_alignParentTop="true"
+    android:layout_toEndOf="@id/rotate_left"
+
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/notification_height"
+
+    android:paddingStart="@dimen/notification_padding_horizontal"
+    android:paddingEnd="@dimen/notification_padding_horizontal"
+
+    android:gravity="center"
+
+    android:theme="@android:style/Widget.Material.Button"
+    style="?android:attr/borderlessButtonStyle"
+
+    android:drawableStart="@drawable/ic_rotate_right"
+    android:drawableTint="@color/light_text_secondary"
+    android:text="@string/label_notification_right"
+    />
+
+  <Button
+    android:id="@+id/flip"
+
+    android:layout_alignParentTop="true"
+    android:layout_toEndOf="@id/rotate_right"
+
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/notification_height"
+
+    android:paddingStart="@dimen/notification_padding_horizontal"
+    android:paddingEnd="@dimen/notification_padding_horizontal"
+
+    android:gravity="center"
+
+    android:theme="@android:style/Widget.Material.Button"
+    style="?android:attr/borderlessButtonStyle"
+
+    android:drawableStart="@drawable/ic_flip"
+    android:drawableTint="@color/light_text_secondary"
+    android:text="@string/label_notification_flip"
+    />
+
+  <ImageButton
+    android:id="@+id/settings"
+
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/notification_height"
+
+    android:gravity="center"
+
+    android:theme="@android:style/Widget.Material.Button"
+    style="?android:attr/borderlessButtonStyle"
+
+    android:src="@drawable/ic_settings"
+    android:alpha="0.54"
+    android:tint="@color/black"
+    />
+
+</RelativeLayout>

@@ -9,4 +9,7 @@
 
   <dimen name="row_text_padding">16dp</dimen>
   <dimen name="row_checkbox_padding">8dp</dimen>
+
+  <dimen name="notification_height">56dp</dimen>
+  <dimen name="notification_padding_horizontal">8dp</dimen>
 </resources>

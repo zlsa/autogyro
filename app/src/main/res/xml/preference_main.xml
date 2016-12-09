@@ -17,19 +17,19 @@
       />
 
     <CheckBoxPreference
-      android:key="show_left"
+      android:key="show_notification_left"
       android:title="@string/control_method_notification_show_left"
       android:defaultValue="@bool/control_method_notification_show_left"
       />
 
     <CheckBoxPreference
-      android:key="show_right"
+      android:key="show_notification_right"
       android:title="@string/control_method_notification_show_right"
       android:defaultValue="@bool/control_method_notification_show_right"
       />
 
     <CheckBoxPreference
-      android:key="show_flip"
+      android:key="show_notification_flip"
       android:title="@string/control_method_notification_show_flip"
       android:defaultValue="@bool/control_method_notification_show_flip"
       />

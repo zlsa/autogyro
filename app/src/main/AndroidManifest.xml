@@ -50,7 +50,7 @@
 
     <service
       android:name=".TileLeftService"
-      android:icon="@drawable/ic_tile_left"
+      android:icon="@drawable/ic_rotate_left"
       android:label="@string/label_tile_left"
       android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
       >
@@ -64,7 +64,7 @@
 
     <service
       android:name=".TileRightService"
-      android:icon="@drawable/ic_tile_right"
+      android:icon="@drawable/ic_rotate_right"
       android:label="@string/label_tile_right"
       android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
       >
@@ -78,7 +78,7 @@
 
     <service
       android:name=".TileFlipService"
-      android:icon="@drawable/ic_tile_flip"
+      android:icon="@drawable/ic_flip"
       android:label="@string/label_tile_flip"
       android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
       >

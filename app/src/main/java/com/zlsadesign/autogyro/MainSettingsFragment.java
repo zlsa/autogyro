@@ -3,11 +3,6 @@ package com.zlsadesign.autogyro;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.support.v7.preference.ListPreference;
-import android.util.Log;
-
-import com.iamhabib.easy_preference.EasyPreference;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -47,6 +42,37 @@ public class MainSettingsFragment extends PreferenceFragment implements SharedPr
         EventBus.getDefault().postSticky(new CommandEvent(CommandEvent.COMMAND_START));
       } else {
         EventBus.getDefault().postSticky(new CommandEvent(CommandEvent.COMMAND_STOP));
+      }
+
+    } else if(key.equals("show_notification")) {
+      boolean enabled = prefs.getBoolean("show_notification", true);
+
+      if(enabled) {
+        EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_SHOW));
+      } else {
+        EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_HIDE));
+      }
+
+    } else if(key.startsWith("show_notification_")) {
+      boolean enabled = prefs.getBoolean(key, false);
+
+      String button = "";
+      switch(key) {
+        case "show_notification_left":
+          button = NotificationChangeEvent.BUTTON_LEFT;
+          break;
+        case "show_notification_right":
+          button = NotificationChangeEvent.BUTTON_RIGHT;
+          break;
+        case "show_notification_flip":
+          button = NotificationChangeEvent.BUTTON_FLIP;
+          break;
+      }
+
+      if(enabled) {
+        EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_BUTTON_SHOW, button));
+      } else {
+        EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_BUTTON_HIDE, button));
       }
 
     }
