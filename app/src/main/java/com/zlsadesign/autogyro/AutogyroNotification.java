@@ -41,10 +41,11 @@ class AutogyroNotification {
         .setCategory(Notification.CATEGORY_SYSTEM)
         .setPriority(Notification.PRIORITY_MIN)
         .setOngoing(true)
+        .setVisibility(Notification.VISIBILITY_PUBLIC)
         .setSmallIcon(R.drawable.ic_notify);
 
     remote_view = new RemoteViews(context.getPackageName(), R.layout.view_notification);
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
       builder.setCustomContentView(remote_view);
     } else {
       builder.setContent(remote_view);
@@ -103,28 +104,7 @@ class AutogyroNotification {
       hide();
 
     } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_PRIORITY)) {
-      int priority = Notification.PRIORITY_MIN;
-
-      switch(Integer.valueOf(event.getButton())) {
-        case 0:
-          priority = Notification.PRIORITY_MAX;
-          break;
-        case 1:
-          priority = Notification.PRIORITY_HIGH;
-          break;
-        case 2:
-          priority = Notification.PRIORITY_DEFAULT;
-          break;
-        case 3:
-          priority = Notification.PRIORITY_LOW;
-          break;
-        case 4:
-          priority = Notification.PRIORITY_MIN;
-          break;
-      }
-
-      setPriority(priority);
-
+      setPriority(getPriority());
     } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_BUTTON_SHOW)) {
       showButton(event.getButton());
     } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_BUTTON_HIDE)) {
@@ -157,7 +137,29 @@ class AutogyroNotification {
   }
 
   private int getPriority() {
-    return Integer.valueOf(getPrefs().getString("notification_priority", "4"));
+    int prefpriority = Integer.valueOf(getPrefs().getString("notification_priority", "4"));
+
+    int priority = Notification.PRIORITY_MIN;
+
+    switch(prefpriority) {
+      case 0:
+        priority = Notification.PRIORITY_MAX;
+        break;
+      case 1:
+        priority = Notification.PRIORITY_HIGH;
+        break;
+      case 2:
+        priority = Notification.PRIORITY_DEFAULT;
+        break;
+      case 3:
+        priority = Notification.PRIORITY_LOW;
+        break;
+      case 4:
+        priority = Notification.PRIORITY_MIN;
+        break;
+    }
+
+    return priority;
   }
 
   public Notification getNotification() {
