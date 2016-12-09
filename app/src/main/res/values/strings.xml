@@ -3,6 +3,8 @@
 
   <string name="label_intro">Autogyro</string>
 
+  <string name="label_library_info">Libraries</string>
+
   <string name="intro_slide_permission_grant">Grant permission</string>
 
   <!-- Intro welcome slide -->
@@ -76,6 +78,11 @@
   <!-- Preferences screen -->
 
   <string name="preferences_advanced">Advanced</string>
+
+  <!-- Menu -->
+
+  <string name="menu_library_info">Libraries</string>
+  <string name="menu_help_feedback">Help &amp; feedback</string>
 
 
 </resources>

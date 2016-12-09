@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+  <item
+    android:id="@+id/open_library_info"
+    android:title="@string/menu_library_info"
+    app:showAsAction="never"
+    />
+
+  <item
+    android:id="@+id/open_help_feedback"
+    android:title="@string/menu_help_feedback"
+    app:showAsAction="never"
+    />
+
+</menu>

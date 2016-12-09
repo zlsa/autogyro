@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toolbar;
 
 
@@ -16,7 +19,8 @@ public class MainActivity extends Activity {
 
   protected PermissionManager pm;
 
-  @BindView(R.id.toolbar) Toolbar toolbar;
+  @BindView(R.id.toolbar)
+  Toolbar toolbar;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,37 @@ public class MainActivity extends Activity {
 
     setUsedIntroScreen();
   }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.main_menu, menu);
+    return true;
+  }
+
+  private void openLibraryInfo() {
+    startActivity(new Intent(this, LibraryInfoActivity.class));
+  }
+
+  private void openHelpFeedback() {
+    startActivity(new Intent(this, IntroActivity.class));
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    // Handle item selection
+    switch (item.getItemId()) {
+      case R.id.open_library_info:
+        openLibraryInfo();
+        return true;
+      case R.id.open_help_feedback:
+        openHelpFeedback();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
+
 
   private SharedPreferences getPrefs() {
     return PreferenceManager.getDefaultSharedPreferences(this);

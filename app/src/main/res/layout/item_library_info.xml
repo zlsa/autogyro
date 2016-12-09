@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+
+  android:orientation="vertical"
+
+  android:paddingTop="@dimen/library_info_card_margin_vertical"
+  android:paddingBottom="@dimen/library_info_card_margin_vertical"
+
+  android:paddingStart="@dimen/library_info_card_margin_horizontal"
+  android:paddingEnd="@dimen/library_info_card_margin_horizontal"
+
+  android:clipToPadding="false"
+  >
+
+  <LinearLayout
+    android:background="@drawable/card_light"
+    android:foreground="?attr/selectableItemBackground"
+
+    android:elevation="2dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/library_info_card_name_height"
+
+      android:layout_marginStart="@dimen/library_info_card_name_margin_horizontal"
+      android:layout_marginEnd="@dimen/library_info_card_name_margin_horizontal"
+      >
+
+      <TextView
+        android:id="@+id/library_name"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+
+        android:gravity="start|center"
+
+        android:textStyle="bold"
+
+        android:textColor="@color/light_text_primary"
+        />
+
+      <TextView
+        android:id="@+id/library_author"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_alignBaseline="@id/library_name"
+
+        android:gravity="end|center"
+
+        android:textColor="@color/light_text_secondary"
+        android:textStyle="italic"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:id="@+id/library_description_container"
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:layout_marginBottom="@dimen/library_info_card_description_margin_vertical"
+      >
+
+      <View
+        android:id="@+id/library_description_divider"
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/library_info_card_description_margin_vertical"
+
+        android:background="@color/light_text_divider"
+
+        android:layout_marginStart="@dimen/library_info_card_description_divider_margin_horizontal"
+        android:layout_marginEnd="@dimen/library_info_card_description_divider_margin_horizontal"
+        />
+
+      <TextView
+        android:id="@+id/library_description"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/library_description_divider"
+        android:layout_alignParentStart="true"
+
+        android:layout_marginBottom="@dimen/library_info_card_description_margin_vertical"
+        android:layout_marginStart="@dimen/library_info_card_description_margin_horizontal"
+        android:layout_marginEnd="@dimen/library_info_card_description_margin_horizontal"
+        />
+
+    </RelativeLayout>
+
+  </LinearLayout>
+
+</FrameLayout>

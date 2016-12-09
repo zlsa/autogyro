@@ -12,4 +12,15 @@
 
   <dimen name="notification_height">56dp</dimen>
   <dimen name="notification_padding_horizontal">8dp</dimen>
+
+  <dimen name="library_info_card_margin_vertical">4dp</dimen>
+  <dimen name="library_info_card_margin_horizontal">8dp</dimen>
+
+  <dimen name="library_info_card_name_height">48dp</dimen>
+
+  <dimen name="library_info_card_name_margin_horizontal">16dp</dimen>
+
+  <dimen name="library_info_card_description_margin_vertical">8dp</dimen>
+  <dimen name="library_info_card_description_margin_horizontal">16dp</dimen>
+  <dimen name="library_info_card_description_divider_margin_horizontal">0dp</dimen>
 </resources>

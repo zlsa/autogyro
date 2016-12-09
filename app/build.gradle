@@ -32,6 +32,5 @@ dependencies {
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.4'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.takisoft.fix:preference-v7:25.0.1.0'
     compile 'org.greenrobot:eventbus:3.0.0'
 }

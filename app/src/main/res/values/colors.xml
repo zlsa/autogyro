@@ -15,4 +15,6 @@
 
   <color name="light_text_primary">#dd000000</color>
   <color name="light_text_secondary">#89000000</color>
+
+  <color name="light_text_divider">#30000000</color>
 </resources>
