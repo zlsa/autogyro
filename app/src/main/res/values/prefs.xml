@@ -6,4 +6,5 @@
   <bool name="control_method_notification_show_left">true</bool>
   <bool name="control_method_notification_show_right">true</bool>
   <bool name="control_method_notification_show_flip">false</bool>
+  <bool name="control_method_notification_show_settings">true</bool>
 </resources>

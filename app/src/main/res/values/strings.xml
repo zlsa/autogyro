@@ -49,6 +49,12 @@
   <string name="control_method_notification_show_left">Show rotate left button</string>
   <string name="control_method_notification_show_right">Show rotate right button</string>
   <string name="control_method_notification_show_flip">Show flip button</string>
+  <string name="control_method_notification_show_settings">Show settings button</string>
+
+  <string name="control_method_notification_show_left_extra">Show rotate left button in notification</string>
+  <string name="control_method_notification_show_right_extra">Show rotate right button in notification</string>
+  <string name="control_method_notification_show_flip_extra">Show flip button in notification</string>
+  <string name="control_method_notification_show_settings_extra">Show settings button in notification</string>
 
   <string name="control_method_use_quick_settings">Quick Settings tile</string>
   <string name="control_method_use_gestures">Gestures</string>
@@ -64,6 +70,10 @@
   <string name="label_tile_left">Rotate Left</string>
   <string name="label_tile_right">Rotate Right</string>
   <string name="label_tile_flip">Flip</string>
+
+  <!-- Preferences screen -->
+
+  <string name="preferences_advanced">Advanced</string>
 
 
 </resources>

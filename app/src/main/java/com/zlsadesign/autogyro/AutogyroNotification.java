@@ -65,6 +65,7 @@ class AutogyroNotification {
     checkButton("left");
     checkButton("right");
     checkButton("flip");
+    checkButton("settings");
 
     show();
   }
@@ -135,6 +136,9 @@ class AutogyroNotification {
         break;
       case "flip":
         id = R.id.flip;
+        break;
+      case "settings":
+        id = R.id.settings;
         break;
     }
 

@@ -10,7 +10,7 @@
   <PreferenceCategory
     android:title="@string/control_method_notification">
 
-    <SwitchPreference
+  <SwitchPreference
       android:key="show_notification"
       android:title="@string/control_method_notification_use"
       android:defaultValue="@bool/control_method_notification_use"
@@ -32,6 +32,17 @@
       android:key="show_notification_flip"
       android:title="@string/control_method_notification_show_flip"
       android:defaultValue="@bool/control_method_notification_show_flip"
+      />
+
+  </PreferenceCategory>
+
+  <PreferenceCategory
+    android:title="@string/preferences_advanced">
+
+  <CheckBoxPreference
+      android:key="show_notification_settings"
+      android:title="@string/control_method_notification_show_settings_extra"
+      android:defaultValue="@bool/control_method_notification_show_settings"
       />
 
   </PreferenceCategory>

@@ -67,6 +67,9 @@ public class MainSettingsFragment extends PreferenceFragment implements SharedPr
         case "show_notification_flip":
           button = NotificationChangeEvent.BUTTON_FLIP;
           break;
+        case "show_notification_settings":
+          button = NotificationChangeEvent.BUTTON_SETTINGS;
+          break;
       }
 
       if(enabled) {
