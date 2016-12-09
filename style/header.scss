@@ -1,0 +1,131 @@
+
+@import 'elevation';
+@import 'metrics';
+
+$primary: #4385f8;
+
+$screenshots-width: 80vh;
+
+#header {
+  background-color: $primary;
+  
+  width: 100%;
+
+  color: white;
+
+  .header-content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-info {
+
+    margin: 0 16px;
+    margin-right: 48px;
+
+
+    padding: 24px 0;
+
+    #app-name {
+      font-size: 48px;
+
+      img {
+        height: 36px;
+        margin-right: 24px;
+      }
+      
+    }
+
+    #app-tagline {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    #download-button {
+      background-color: white;
+      border-radius: 2px;
+      
+      color: $primary;
+
+      display: inline-block;
+
+      margin: 16px 0;
+      margin-top: 24px;
+      
+      height: 48px;
+      line-height: 48px;
+      
+      padding: 0 16px;
+
+      transition: box-shadow 0.1s ease;
+
+      @include elevation(1px);
+
+      &:active {
+        @include elevation(3px);
+      }
+      
+    }
+
+    .works-on {
+      display: block;
+      font-size: 12px;
+      color: rgba(white, 0.54);
+
+      strong {
+        font-weight: bold;
+        color: rgba(white, 0.87);
+        margin-right: 8px;
+      }
+    }
+    
+  }
+
+  .screenshot {
+    display: block;
+    width: 512px;
+    max-width: 100%;
+  }
+  
+}
+
+@media (max-width: 1023px) {
+  
+  .header-content {
+    text-align: center;
+
+    .main-info {
+      padding: 64px 0 !important;
+    }
+
+    .screenshot {
+      margin: 0 auto;
+    }
+    
+  }
+  
+}
+
+@media (min-width: 1024px) {
+
+  #header {
+    height: 100vh;
+
+    .header-content {
+      width: $max-width;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    .main-info {
+      margin-top: 20vh;
+      flex: 1;
+    }
+
+    .screenshot {
+      align-self: flex-end;
+    }
+    
+  }
+  
+}

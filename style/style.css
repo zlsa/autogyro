@@ -1,0 +1,120 @@
+* {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+#all-apps {
+  background-color: #212121;
+  height: 64px;
+  display: none; }
+  #all-apps ul {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 80vw; }
+  #all-apps .app {
+    display: inline-block;
+    height: 100%; }
+    #all-apps .app a {
+      display: block;
+      height: 100%;
+      position: relative;
+      display: flex; }
+      #all-apps .app a .icon {
+        align-self: center;
+        width: 48px; }
+
+#header {
+  background-color: #4385f8;
+  width: 100%;
+  color: white; }
+  #header .header-content {
+    width: 100%;
+    height: 100%; }
+  #header .main-info {
+    margin: 0 16px;
+    margin-right: 48px;
+    padding: 24px 0; }
+    #header .main-info #app-name {
+      font-size: 48px; }
+      #header .main-info #app-name img {
+        height: 36px;
+        margin-right: 24px; }
+    #header .main-info #app-tagline {
+      font-size: 18px;
+      margin-top: 16px; }
+    #header .main-info #download-button {
+      background-color: white;
+      border-radius: 2px;
+      color: #4385f8;
+      display: inline-block;
+      margin: 16px 0;
+      margin-top: 24px;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 16px;
+      transition: box-shadow 0.1s ease;
+      box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.3), 0 2px 7px rgba(0, 0, 0, 0.2); }
+      #header .main-info #download-button:active {
+        box-shadow: 0 1.5px 9px rgba(0, 0, 0, 0.3), 0 6px 21px rgba(0, 0, 0, 0.2); }
+    #header .main-info .works-on {
+      display: block;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.54); }
+      #header .main-info .works-on strong {
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.87);
+        margin-right: 8px; }
+  #header .screenshot {
+    display: block;
+    width: 512px;
+    max-width: 100%; }
+
+@media (max-width: 1023px) {
+  .header-content {
+    text-align: center; }
+    .header-content .main-info {
+      padding: 64px 0 !important; }
+    .header-content .screenshot {
+      margin: 0 auto; } }
+
+@media (min-width: 1024px) {
+  #header {
+    height: 100vh; }
+    #header .header-content {
+      width: 80vw;
+      display: flex;
+      margin: 0 auto; }
+    #header .main-info {
+      margin-top: 20vh;
+      flex: 1; }
+    #header .screenshot {
+      align-self: flex-end; } }
+
+footer {
+  background-color: #212121;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  min-height: 128px;
+  padding: 0 24px; }
+  footer .container {
+    align-self: center; }
+    footer .container a {
+      text-decoration: underline; }
+
+html {
+  font-family: 'Roboto', sans-serif; }
+
+/*# sourceMappingURL=style.css.map */

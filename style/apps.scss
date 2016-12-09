@@ -1,0 +1,44 @@
+
+@import 'metrics';
+
+$apps-bar-height: 64px;
+$app-icon-size: 48px;
+
+#all-apps {
+  background-color: #212121;
+  height: $apps-bar-height;
+
+  display: none;
+  
+  ul {
+    height: 100%;
+    margin: 0 auto;
+    
+    max-width: $max-width;
+  }
+
+  .app {
+
+    display: inline-block;
+    height: 100%;
+    
+    a {
+
+      display: block;
+      height: 100%;
+
+      position: relative;
+
+      display: flex;
+
+      .icon {
+        align-self: center;
+        width: $app-icon-size;
+      }
+
+    }
+
+  }
+  
+}
+

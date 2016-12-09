@@ -1,0 +1,5 @@
+
+@mixin elevation($elevation: 1px) {
+  box-shadow: 0 $elevation * 0.5 $elevation * 3 rgba(black, 0.3),
+              0 $elevation * 2 $elevation * 7 rgba(black, 0.2);
+}

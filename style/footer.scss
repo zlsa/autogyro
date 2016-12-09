@@ -1,0 +1,28 @@
+
+@import 'elevation';
+
+footer {
+  background-color: #212121;
+  
+  color: rgba(white, 0.5);
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 12px;
+
+  min-height: 128px;
+
+  padding: 0 24px;
+
+  .container {
+
+    align-self: center;
+
+    a {
+      text-decoration: underline;
+    }
+    
+  }
+  
+}
