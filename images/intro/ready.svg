@@ -17,8 +17,8 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="ready.svg"
    inkscape:export-filename="/home/zlsa/projects/android/autogyro-2/images/intro/ready.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180">
   <defs
      id="defs4">
     <filter
@@ -55,11 +55,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="1008.2142"
-     inkscape:cy="309.01626"
+     inkscape:zoom="1"
+     inkscape:cx="858.2141999999999"
+     inkscape:cy="717.0162599999999"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      inkscape:object-nodes="true"
@@ -67,7 +67,12 @@
      inkscape:snap-text-baseline="true"
      inkscape:snap-center="true"
      showguides="false"
-     inkscape:guide-bbox="true">
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="862"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
        id="grid4136"
@@ -89,7 +94,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -136,7 +141,7 @@
        sodipodi:start="2.3561945"
        sodipodi:end="4.712389"
        sodipodi:open="true"
-       d="M -155.59798,579.96016 A 56,56 0 0 1 -167.73725,518.93191 56,56 0 0 1 -116,484.36218"
+       d="m -155.59798013481,579.9601619752708 a 56.00000000000001,56.00000000000001 0 0 1 -12.139273370551,-61.0282523316602 56.00000000000001,56.00000000000001 0 0 1 51.7372546038184,-34.5697270264232"
        inkscape:transform-center-x="27.999999"
        inkscape:transform-center-y="-8.2009887" />
     <path
@@ -149,7 +154,7 @@
     <path
        inkscape:transform-center-y="8.2009709"
        inkscape:transform-center-x="-27.999999"
-       d="M 76.40202,-500.76414 A 56,56 0 0 1 64.262746,-561.79239 56,56 0 0 1 116,-596.36212"
+       d="m 76.40201986519001,-500.7641422239479 a 56.00000000000001,56.00000000000001 0 0 1 -12.13927337055098,-61.02825233166 56.00000000000001,56.00000000000001 0 0 1 51.73725460381837,-34.5697270264234"
        sodipodi:open="true"
        sodipodi:end="4.712389"
        sodipodi:start="2.3561945"
@@ -169,7 +174,7 @@
        d="m -116,616.36216 0,-20 0,-20 -20,20 20,20 z"
        style="fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <rect
-       style="opacity:1;fill:#607d8b;fill-opacity:1;stroke:none;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#404040;fill-opacity:1;stroke:none;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4172"
        width="64"
        height="512"
@@ -178,7 +183,7 @@
        rx="8.9003897e-06"
        ry="8.9003897e-06" />
     <circle
-       style="opacity:1;fill:#8bc34a;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#4385f8;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4174"
        cx="608"
        cy="348.36215"

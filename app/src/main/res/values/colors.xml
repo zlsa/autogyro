@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="primary">@color/material_blue_grey_500</color>
-  <color name="primary_dark">@color/material_blue_grey_700</color>
-  <color name="accent">@color/material_light_green_500</color>
+  <color name="primary">#2d2d2d</color>
+  <color name="primary_dark">#000000</color>
+
+  <color name="accent">#4385f8</color>
+  <color name="accent_dark">#2E5FB3</color>
 
   <color name="intro_control_bar_color">@color/material_blue_grey_700</color>
+
+  <color name="bar_color">#3a3a3a</color>
 
   <color name="white">#ffffff</color>
   <color name="black">#000000</color>

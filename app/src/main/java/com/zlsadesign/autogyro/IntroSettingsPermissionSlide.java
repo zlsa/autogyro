@@ -23,6 +23,9 @@ public class IntroSettingsPermissionSlide extends IntroGenericSlide {
     this.setDescription(R.string.intro_slide_settings_permission_description);
     this.setImage(R.mipmap.image_intro_settings_permission);
 
+    this.setBackground(R.color.material_blue_grey_700);
+    this.setButtons(R.color.material_blue_grey_800);
+
     return this.root;
   }
 

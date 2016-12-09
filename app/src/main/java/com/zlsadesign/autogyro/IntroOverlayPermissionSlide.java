@@ -23,6 +23,9 @@ public class IntroOverlayPermissionSlide extends IntroGenericSlide {
     this.setDescription(R.string.intro_slide_overlay_permission_description);
     this.setImage(R.mipmap.image_intro_overlay_permission);
 
+    this.setBackground(R.color.material_blue_grey_700);
+    this.setButtons(R.color.material_blue_grey_800);
+
     return this.root;
   }
 

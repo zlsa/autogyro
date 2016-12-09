@@ -81,8 +81,8 @@ public class IntroActivity extends MaterialIntroActivity {
     }
 
     addSlide(new IntroGenericSlideBuilder(this)
-        .backgroundColor(R.color.material_light_green_500)
-        .buttonsColor(R.color.material_light_green_700)
+        .backgroundColor(R.color.accent)
+        .buttonsColor(R.color.accent_dark)
         .image(R.mipmap.image_intro_ready)
         .title(R.string.intro_slide_welcome_title)
         .description(desc)
@@ -93,12 +93,12 @@ public class IntroActivity extends MaterialIntroActivity {
   private void addReadySlide() {
 
     addSlide(new IntroGenericSlideBuilder(this)
-            .backgroundColor(R.color.material_light_green_500)
-            .buttonsColor(R.color.material_light_green_700)
-            .image(R.mipmap.image_intro_ready)
-            .title(R.string.intro_slide_ready_title)
-            .description(R.string.intro_slide_ready_description)
-            .build());
+        .backgroundColor(R.color.accent)
+        .buttonsColor(R.color.accent_dark)
+        .image(R.mipmap.image_intro_ready)
+        .title(R.string.intro_slide_ready_title)
+        .description(R.string.intro_slide_ready_description)
+        .build());
   }
 
 }
