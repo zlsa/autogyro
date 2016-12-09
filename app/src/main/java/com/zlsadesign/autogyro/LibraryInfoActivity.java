@@ -75,6 +75,15 @@ public class LibraryInfoActivity extends Activity {
             .setLicense("Apache License, Version 2.0")
     );
 
+    addLibrary(
+        new LibraryInfo()
+            .setName("GitHub circle icon")
+            .setAuthor("Austin Andrews")
+            .setLink("https://materialdesignicons.com/icon/github-circle")
+            .setDescription("From the third-party Material Design Icon set.")
+            .setLicense("SIL Open Font License")
+    );
+
     Collections.sort(libraries, new LibraryInfoComparator());
 
     LibraryInfoAdapter customAdapter = new LibraryInfoAdapter(this, R.layout.item_library_info, libraries);

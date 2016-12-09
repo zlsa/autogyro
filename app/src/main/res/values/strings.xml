@@ -4,6 +4,12 @@
   <string name="label_intro">Autogyro</string>
 
   <string name="label_library_info">Libraries</string>
+  <string name="label_help_feedback">Help &amp; Feedback</string>
+
+  <string name="help_website">Website</string>
+  <string name="help_bug_report">Report an issue</string>
+  <string name="help_repository">GitHub Repository</string>
+  <string name="help_email">Email</string>
 
   <string name="intro_slide_permission_grant">Grant permission</string>
 

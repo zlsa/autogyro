@@ -52,7 +52,14 @@
       android:name=".LibraryInfoActivity"
       android:label="@string/label_library_info"
       android:parentActivityName=".MainActivity" >
-    >
+      >
+    </activity>
+
+    <activity
+      android:name=".HelpFeedbackActivity"
+      android:label="@string/label_help_feedback"
+      android:parentActivityName=".MainActivity" >
+      >
     </activity>
 
     <activity

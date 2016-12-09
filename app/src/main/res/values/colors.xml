@@ -13,6 +13,8 @@
   <color name="white">#ffffff</color>
   <color name="black">#000000</color>
 
+  <color name="light_background">#fafafa</color>
+
   <color name="light_text_primary">#dd000000</color>
   <color name="light_text_secondary">#89000000</color>
 

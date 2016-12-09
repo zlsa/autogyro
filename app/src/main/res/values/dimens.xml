@@ -23,4 +23,12 @@
   <dimen name="library_info_card_description_margin_vertical">8dp</dimen>
   <dimen name="library_info_card_description_margin_horizontal">16dp</dimen>
   <dimen name="library_info_card_description_divider_margin_horizontal">0dp</dimen>
+
+  <dimen name="help_feedback_item_margin_vertical">16dp</dimen>
+  <dimen name="help_feedback_item_margin_horizontal">16dp</dimen>
+  <dimen name="help_feedback_item_gap">32dp</dimen>
+  <dimen name="help_feedback_item_text_gap">16dp</dimen>
+  <dimen name="help_feedback_item_height">72dp</dimen>
+
+  <dimen name="help_feedback_item_name_height">48dp</dimen>
 </resources>

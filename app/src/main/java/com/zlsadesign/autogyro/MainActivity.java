@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
     }
 
     setUsedIntroScreen();
+
+    startService(new Intent(this, AutogyroService.class));
   }
 
   @Override
@@ -56,7 +58,7 @@ public class MainActivity extends Activity {
   }
 
   private void openHelpFeedback() {
-    startActivity(new Intent(this, IntroActivity.class));
+    startActivity(new Intent(this, HelpFeedbackActivity.class));
   }
 
   @Override

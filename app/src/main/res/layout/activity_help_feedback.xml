@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+
   android:orientation="vertical"
+
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/light_background"
-  >
+  android:layout_height="match_parent">
 
   <Toolbar
     android:id="@+id/toolbar"
@@ -22,15 +22,10 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
 
-    android:listSelector="@android:color/transparent"
+    android:divider="@color/light_text_divider"
+    android:dividerHeight="1dp"
 
-    android:divider="@null"
-    android:dividerHeight="0dp"
-
-    android:paddingTop="@dimen/library_info_card_margin_vertical"
-    android:paddingBottom="@dimen/library_info_card_margin_vertical"
-
-    android:clipToPadding="false"
+    android:footerDividersEnabled="true"
     />
 
 </LinearLayout>
