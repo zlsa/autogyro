@@ -1,8 +1,11 @@
 package com.zlsadesign.autogyro;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -13,6 +16,11 @@ public class MainSettingsFragment extends PreferenceFragment implements SharedPr
     super.onCreate(savedInstanceState);
 
     addPreferencesFromResource(R.xml.preference_main);
+
+    Context hostActivity = getActivity();
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(hostActivity);
+
+    updateNotificationPriority(Integer.valueOf(prefs.getString("notification_priority", "4")));
   }
 
   @Override
@@ -31,6 +39,12 @@ public class MainSettingsFragment extends PreferenceFragment implements SharedPr
     prefs.unregisterOnSharedPreferenceChangeListener(this);
   }
 
+  private void updateNotificationPriority(int priority) {
+    String[] priorities = getResources().getStringArray(R.array.notification_priority);
+
+    Preference pref = findPreference("notification_priority");
+    pref.setSummary(priorities[priority]);
+  }
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
@@ -53,6 +67,12 @@ public class MainSettingsFragment extends PreferenceFragment implements SharedPr
         EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_HIDE));
       }
 
+    } else if(key.equals("notification_priority")) {
+      int priority = Integer.valueOf(prefs.getString(key, "4"));
+
+      EventBus.getDefault().postSticky(new NotificationChangeEvent(NotificationChangeEvent.COMMAND_PRIORITY, String.valueOf(priority)));
+
+      updateNotificationPriority(priority);
     } else if(key.startsWith("show_notification_")) {
       boolean enabled = prefs.getBoolean(key, false);
 

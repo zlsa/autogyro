@@ -46,6 +46,8 @@
 
   <string name="control_method_notification_use">Enable notification</string>
 
+  <string name="control_method_notification_priority">Notification priority</string>
+
   <string name="control_method_notification_show_left">Show rotate left button</string>
   <string name="control_method_notification_show_right">Show rotate right button</string>
   <string name="control_method_notification_show_flip">Show flip button</string>

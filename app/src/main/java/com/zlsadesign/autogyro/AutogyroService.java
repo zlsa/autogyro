@@ -57,6 +57,8 @@ public class AutogyroService extends Service {
   public void onCreate() {
     EventBus.getDefault().register(this);
 
+    createNotification();
+
     if(getPrefs().getBoolean("enabled", false)) {
       start();
     }
@@ -72,6 +74,8 @@ public class AutogyroService extends Service {
     Log.i("onDestroy", "destroyed");
     EventBus.getDefault().unregister(this);
     stop();
+
+    destroyNotification();
   }
 
   @Nullable
@@ -87,8 +91,6 @@ public class AutogyroService extends Service {
 
     if(overlay == null)
       createOverlay();
-    if(notification == null)
-      createNotification();
 
     saveSettings();
     addOverlay();
@@ -107,8 +109,6 @@ public class AutogyroService extends Service {
     restoreSettings();
     removeOverlay();
     removeNotification();
-
-    destroyNotification();
   }
 
   protected void toggle(boolean enabled) {

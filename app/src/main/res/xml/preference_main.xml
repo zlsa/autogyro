@@ -39,10 +39,18 @@
   <PreferenceCategory
     android:title="@string/preferences_advanced">
 
-  <CheckBoxPreference
+    <CheckBoxPreference
       android:key="show_notification_settings"
       android:title="@string/control_method_notification_show_settings_extra"
       android:defaultValue="@bool/control_method_notification_show_settings"
+      />
+
+    <ListPreference
+      android:key="notification_priority"
+      android:title="@string/control_method_notification_priority"
+      android:entries="@array/notification_priority"
+      android:entryValues="@array/notification_priority_values"
+      android:defaultValue="4"
       />
 
   </PreferenceCategory>

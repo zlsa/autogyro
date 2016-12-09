@@ -32,11 +32,15 @@ class AutogyroNotification {
   AutogyroNotification(Context context) {
     this.context = context;
 
+    EventBus.getDefault().register(this);
+    Log.d("foo", "Registered");
+
     notification_manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
     Notification.Builder builder = new Notification.Builder(context)
         .setCategory(Notification.CATEGORY_SYSTEM)
-        .setPriority(Notification.PRIORITY_LOW)
+        .setPriority(Notification.PRIORITY_MIN)
+        .setOngoing(true)
         .setSmallIcon(R.drawable.ic_notify);
 
     remote_view = new RemoteViews(context.getPackageName(), R.layout.view_notification);
@@ -60,7 +64,7 @@ class AutogyroNotification {
 
     notification = builder.build();
 
-    EventBus.getDefault().register(this);
+    setPriority(getPriority());
 
     checkButton("left");
     checkButton("right");
@@ -71,13 +75,18 @@ class AutogyroNotification {
   }
 
   void destroy() {
+    Log.d("foo", "Unregistered");
     EventBus.getDefault().unregister(this);
+
     hide();
   }
 
   void show() {
-    if(shouldShowNotification())
+    if(shouldShowNotification()) {
       notification_manager.notify(NOTIFICATION_ID, notification);
+    } else {
+      hide();
+    }
   }
 
   void hide() {
@@ -92,6 +101,29 @@ class AutogyroNotification {
       show();
     } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_HIDE)) {
       hide();
+
+    } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_PRIORITY)) {
+      int priority = Notification.PRIORITY_MIN;
+
+      switch(Integer.valueOf(event.getButton())) {
+        case 0:
+          priority = Notification.PRIORITY_MAX;
+          break;
+        case 1:
+          priority = Notification.PRIORITY_HIGH;
+          break;
+        case 2:
+          priority = Notification.PRIORITY_DEFAULT;
+          break;
+        case 3:
+          priority = Notification.PRIORITY_LOW;
+          break;
+        case 4:
+          priority = Notification.PRIORITY_MIN;
+          break;
+      }
+
+      setPriority(priority);
 
     } else if(event.getCommand().equals(NotificationChangeEvent.COMMAND_BUTTON_SHOW)) {
       showButton(event.getButton());
@@ -113,11 +145,19 @@ class AutogyroNotification {
   }
 
   private boolean shouldShowNotification() {
-    return getPrefs().getBoolean("show_notification", false);
+    if(!shouldShowButton("left") && !shouldShowButton("right") && !shouldShowButton("flip")) {
+      return false;
+    } else {
+      return getPrefs().getBoolean("show_notification", false);
+    }
   }
 
   private boolean shouldShowButton(String button) {
     return getPrefs().getBoolean("show_notification_" + button, false);
+  }
+
+  private int getPriority() {
+    return Integer.valueOf(getPrefs().getString("notification_priority", "4"));
   }
 
   public Notification getNotification() {
@@ -148,11 +188,13 @@ class AutogyroNotification {
   private void setButtonVisibility(String button, int visibility) {
     remote_view.setViewVisibility(getIdFromButton(button), visibility);
 
-    if(!shouldShowButton("left") && !shouldShowButton("right") && !shouldShowButton("flip")) {
-      hide();
-    } else {
-      show();
-    }
+    show();
+  }
+
+  private void setPriority(int priority) {
+    notification.priority = priority;
+
+    show();
   }
 
   private void showButton(String button) {
