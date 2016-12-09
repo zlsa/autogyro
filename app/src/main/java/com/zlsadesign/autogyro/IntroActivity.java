@@ -1,6 +1,7 @@
 package com.zlsadesign.autogyro;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -100,5 +101,12 @@ public class IntroActivity extends MaterialIntroActivity {
         .description(R.string.intro_slide_ready_description)
         .build());
   }
+
+  @Override
+  public void onFinish() {
+    super.onFinish();
+    startService(new Intent(this, AutogyroService.class));
+  }
+
 
 }

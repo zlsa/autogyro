@@ -13,14 +13,20 @@ public class PermissionManager {
   private static final int ACTION_MANAGE_SETTINGS_PERMISSION_REQUEST_CODE = 1;
 
   private Activity activity;
+  private Context context;
 
   PermissionManager(Activity activity) {
     this.activity = activity;
+    this.context = activity;
+  }
+
+  PermissionManager(Context context) {
+    this.context = context;
   }
 
   public boolean hasOverlayPermission() {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      return Settings.canDrawOverlays(this.activity);
+      return Settings.canDrawOverlays(this.context);
     }
     return true;
   }
@@ -37,7 +43,7 @@ public class PermissionManager {
 
   public boolean hasSettingsPermission() {
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      return Settings.System.canWrite(this.activity);
+      return Settings.System.canWrite(this.context);
     }
     return true;
   }

@@ -55,6 +55,13 @@ public class AutogyroService extends Service {
 
   @Override
   public void onCreate() {
+
+    PermissionManager pm = new PermissionManager(this);
+
+    if(!pm.hasOverlayPermission() || !pm.hasSettingsPermission()) {
+      stop();
+    }
+
     EventBus.getDefault().register(this);
 
     createNotification();

@@ -39,11 +39,11 @@ public class MainActivity extends Activity {
       Log.d("onCreate", "starting intro activity");
       Intent intent = new Intent(this, IntroActivity.class);
       startActivity(intent);
+    } else {
+      startService(new Intent(this, AutogyroService.class));
     }
 
     setUsedIntroScreen();
-
-    startService(new Intent(this, AutogyroService.class));
   }
 
   @Override
