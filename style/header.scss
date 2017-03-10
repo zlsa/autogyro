@@ -1,17 +1,24 @@
 
+@import 'color';
 @import 'elevation';
 @import 'metrics';
 
-$primary: #4385f8;
-
 $screenshots-width: 80vh;
 
-#header {
+.main-container {
   background-color: $primary;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
   
   width: 100%;
 
   color: white;
+
+  flex: 1;
 
   .header-content {
     width: 100%;
@@ -108,8 +115,11 @@ $screenshots-width: 80vh;
 
 @media (min-width: 1024px) {
 
-  #header {
+  .main-container {
     height: 100vh;
+  }
+  
+  #header {
 
     .header-content {
       width: $max-width;

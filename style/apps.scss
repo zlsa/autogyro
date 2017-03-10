@@ -1,4 +1,5 @@
 
+@import 'color';
 @import 'metrics';
 
 $apps-bar-height: 64px;
@@ -6,9 +7,9 @@ $app-icon-size: 48px;
 
 #all-apps {
   background-color: #212121;
-  height: $apps-bar-height;
+  min-height: $apps-bar-height;
 
-  display: none;
+  width: 100%;
   
   ul {
     height: 100%;
@@ -20,8 +21,10 @@ $app-icon-size: 48px;
   .app {
 
     display: inline-block;
-    height: 100%;
-    
+    height: $apps-bar-height;
+
+    margin-right: 16px;
+
     a {
 
       display: block;
@@ -34,6 +37,18 @@ $app-icon-size: 48px;
       .icon {
         align-self: center;
         width: $app-icon-size;
+      }
+
+      .name {
+        align-self: center;
+        
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        
+        margin-left: 8px;
+        margin-right: 16px;
       }
 
     }
